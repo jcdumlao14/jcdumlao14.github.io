@@ -1,4 +1,4 @@
-﻿:root {
+:root {
   --sage: #eaf3e9;
   --sage-deep: #d9e9d7;
   --cream: #faf9f5;
@@ -215,4 +215,59 @@ h2 { margin-bottom: 20px; font-size: clamp(31px, 3.6vw, 45px); font-weight: 800;
 }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; }
+}
+
+/* PORTFOLIO TAG HOVER EFFECT */
+.tag-list span {
+  transition:
+    background-color 180ms ease,
+    color 180ms ease,
+    border-color 180ms ease,
+    box-shadow 180ms ease,
+    transform 180ms ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .tag-list span:hover {
+    background-color: #dce9df;
+    color: #244b38;
+    border-color: #a9c5b1;
+    box-shadow: 0 3px 9px rgba(36, 75, 56, 0.10);
+    transform: translateY(-2px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tag-list span {
+    transition: none;
+  }
+
+  .tag-list span:hover {
+    transform: none;
+  }
+}
+
+/* PROJECT TAG HOVER OVERRIDE */
+.project-card .tag-list span {
+  cursor: help;
+  transition: background-color 180ms ease, color 180ms ease,
+    border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
+}
+
+.project-card .tag-list span:hover {
+  background-color: #dce9df !important;
+  color: #244b38 !important;
+  border-color: #a9c5b1 !important;
+  box-shadow: 0 3px 9px rgba(36, 75, 56, 0.16);
+  transform: translateY(-2px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .project-card .tag-list span {
+    transition: none;
+  }
+
+  .project-card .tag-list span:hover {
+    transform: none;
+  }
 }
